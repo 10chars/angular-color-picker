@@ -50,7 +50,8 @@ If a list is given then choose one of the items. The first item in the list will
     color-picker-swatch-bootstrap="true, false"
     color-picker-swatch-only="true, false"
     color-picker-pos="'bottom left', 'bottom right', 'top left', 'top right'"
-    color-picker-case="'upper', 'lower'"
+    color-picker-case="'upper', 'lower'",
+    color-picker-emit-change-event="true, false"  //Passes chosen color to parent scope.
 ></color-picker>
 ```
 

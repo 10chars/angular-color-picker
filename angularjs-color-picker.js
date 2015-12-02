@@ -4,7 +4,7 @@
  *
  * Copyright 2015 ruhley
  *
- * 2015-11-19 08:25:57
+ * 2015-12-02 17:18:30
  *
  */
 if (typeof module !== "undefined" && typeof exports !== "undefined" && module.exports === exports){
@@ -33,7 +33,8 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
                 colorPickerSwatch: '=',
                 colorPickerSwatchOnly: '=',
                 colorPickerSwatchPos: '=',
-                colorPickerSwatchBootstrap: '='
+                colorPickerSwatchBootstrap: '=',
+                colorPickerEmitChangeEvent: '='
             },
             templateUrl: 'template/color-picker/directive.html',
             link: function ($scope, element, attrs, control) {
@@ -150,6 +151,10 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
                         }
 
                         $scope.ngModel = colorString;
+
+                        if ($scope.colorPickerEmitChangeEvent) {
+                            $scope.$emit('colorSet', colorString);
+                        }
                     }
                 };
 
