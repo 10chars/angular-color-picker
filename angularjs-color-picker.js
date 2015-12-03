@@ -4,7 +4,7 @@
  *
  * Copyright 2015 ruhley
  *
- * 2015-12-03 16:29:46
+ * 2015-12-03 16:41:29
  *
  */
 if (typeof module !== "undefined" && typeof exports !== "undefined" && module.exports === exports){
@@ -34,7 +34,11 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
                 colorPickerSwatchOnly: '=',
                 colorPickerSwatchPos: '=',
                 colorPickerSwatchBootstrap: '=',
-                colorPickerEmitChangeEvent: '='
+                colorPickerComponentBG: '=',
+                colorPickerBG: '=',
+                colorPickerText: '=',
+                colorPickerLink: '=',
+                colorPickerAccent: '=',
             },
             templateUrl: 'template/color-picker/directive.html',
             link: function ($scope, element, attrs, control) {
@@ -152,8 +156,16 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
 
                         $scope.ngModel = colorString;
 
-                        if ($scope.colorPickerEmitChangeEvent) {
-                            $scope.$emit('colorSet', colorString);
+                        if ($scope.colorPickerBG) {
+                            $scope.$emit('colorPickerBG', colorString);
+                        }else if ($scope.colorPickerComponentBG){
+                            $scope.$emit('colorPickerComponentBG', colorString);
+                        }else if ($scope.colorPickerText){
+                            $scope.$emit('colorPickerText', colorString);
+                        }else if ($scope.colorPickerLink){
+                            $scope.$emit('colorPickerLink', colorString);
+                        }else if ($scope.colorPickerAccent){
+                            $scope.$emit('colorPickerAccent', colorString);
                         }
                     }
                 };
