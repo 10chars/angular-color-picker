@@ -4,7 +4,7 @@
  *
  * Copyright 2015 ruhley
  *
- * 2015-12-03 16:41:29
+ * 2015-12-11 17:09:41
  *
  */
 if (typeof module !== "undefined" && typeof exports !== "undefined" && module.exports === exports){
@@ -39,6 +39,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
                 colorPickerText: '=',
                 colorPickerLink: '=',
                 colorPickerAccent: '=',
+                colorPickerDisplayFormat: '='
             },
             templateUrl: 'template/color-picker/directive.html',
             link: function ($scope, element, attrs, control) {
